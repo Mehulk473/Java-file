@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h2>Report Card</h2>
+        <label for="">Name</label>
+        <input type="text" name="" id="nam">
+        <br><br>
+        <label for="">Physics</label>
+        <input type="text" name="" id="phy">
+        <br><br>
+        <label for="">Chemistry</label>
+        <input type="text" name="" id="chem">
+        <br><br>
+        <label for="">English</label>
+        <input type="text" name="" id="eng">
+        <br><br>
+        <label for="">Maths</label>
+        <input type="text" name="" id="math">
+        <br><br>
+        <input type="button" value="Submit" onclick="show()">
+        <h3>Result</h3>
+        <br><br>
+        <label for="">Total Marks</label>
+        <input type="text" name="" id="total">
+        <br><br>
+        <label for="">Percentage </label>
+        <input type="text" name="" id="per">
+        <br><br>
+        <label for="">Result </label>
+        <input type="text" name="" id="pf">
+        <br><br>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function show() {
+        var p, c, e, m, tm, pe, pf;
+        p = document.getElementById("phy").value;
+        c = document.getElementById("chem").value;
+        e = document.getElementById("eng").value;
+        m = document.getElementById("math").value
+        tm = parseInt(p) + parseInt(c) + parseInt(e) + parseInt(m);
+        document.getElementById("total").value = tm;
+        pe = (tm / 400)*100 ;
+        document.getElementById("per").value = pe.toFixed(2) + "%";
+        if (pe > 33){
+            document.getElementById("pf").value = "PASS";
+        }
+        else {
+            document.getElementById("pf").value = "FAIL";
+        }
+    }
+</script>

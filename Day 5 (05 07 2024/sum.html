@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+       body{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .form{
+        border: 2px solid black;
+        padding: 20px;
+       }
+       h3{
+        margin-left: 100px;
+       }
+       #resetv{
+        margin-left: 60px;
+       }
+       #submitv{
+        margin-left: 30px;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h3>Sum</h3>
+        <label for="">Enter A</label>
+        <input type="text" name="" id="firstv">
+        <br><br>
+        <label for="">Enter B</label>
+        <input type="text" name="" id="secondv">
+        <br><br>
+        <label for="">Answer</label>
+        <input type="text" name="" id="answerv">
+        <br><br><br>
+        <input type="button" value="Submit" onclick="show()" id="submitv">
+        <input type="reset" value="Reset" onclick="reset()" id="resetv">
+    </div>
+
+</body>
+</html>
+<script>
+    function show(){
+        var a,b,c;
+        a= document.getElementById("firstv").value;
+        b= document.getElementById("secondv").value;
+        c= parseInt(a) + parseInt(b);
+        document.getElementById ("answerv").value=c;   
+    }
+    function reset(){
+        document.getElementById("firstv").value = " ";
+        document.getElementById("secondv").value = " ";
+         document.getElementById("answerv").value = " ";
+          document.getElementById("onev").focus();
+    }
+
+</script>

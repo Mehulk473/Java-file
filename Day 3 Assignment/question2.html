@@ -1,0 +1,19 @@
+<script>
+    var sal,tax;
+    sal=2000;
+    if(sal >70000 && sal<100000){
+        tax= sal - 1200;
+        document.write(tax);
+    }
+    else if(sal >100000 && sal<200000){
+        tax= sal - 1500;
+        document.write(tax);
+    }
+    else if(sal >=200000){
+        tax= sal - 2000;
+        document.write(tax);
+    }
+    else if(sal<70000){
+        document.write("No Tax")
+    }
+</script>
