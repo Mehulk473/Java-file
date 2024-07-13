@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="M">Mehul</h2>
+    <input type="button" value="start" id="st" onclick="show()">
+    <input type="button" value="reset" id="re" onclick="end()">
+</body>
+</html>
+<script>
+    var color=["orange","green","red","blue","yellow"];
+    var x,i=0;
+
+    function show(){
+        x=setInterval(start,1000);
+    }
+    function start(){
+        document.getElementById("M").style.color=color[i];
+        i++;
+        if(i==5){
+            i=0;
+        }
+    }
+    function end(){
+        clearInterval(x);
+    }
+
+</script>

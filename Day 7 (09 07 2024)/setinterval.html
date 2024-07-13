@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #st{
+            margin-bottom: 10px;
+        }
+        #re{
+           
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="h" placeholder="Hours">
+    <input type="text" name="" id="m" placeholder="Mintues">
+    <input type="text" name="" id="s" placeholder="Seconds">
+    <br><br>
+    <input type="button" value="Start" id="st" onclick="clock()">
+    <input type="button" value="Stop" id="re" onclick="end()">
+</body>
+</html>
+<script>
+    function clock(){
+        x=setInterval(start,1000);
+    }
+    function start(){
+        var hour=new Date();
+        document.getElementById("h").value =hour.getHours();
+        document.getElementById("m").value =hour.getMinutes();
+        document.getElementById("s").value =hour.getSeconds();
+        
+    }
+    function end(){
+        clearInterval(x);
+    }
+</script>

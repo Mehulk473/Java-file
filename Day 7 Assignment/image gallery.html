@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Image Slider</h2>
+    <div>
+        <img src="https://www.svgrepo.com/show/453847/smiley-negative.svg" alt="img1" height="200px" width="200px" id="slideshow">
+    </div>
+    <input type="button" value="Start" id="st" onclick="smiley()">
+    <input type="button" value="stop" id="st" onclick="stop()">
+</body>
+</html>
+<script>
+    var image=["https://www.svgrepo.com/show/453847/smiley-negative.svg","https://www.svgrepo.com/show/453846/smiley-neutral.svg", "https://www.svgrepo.com/show/453848/smiley-positive.svg"];
+        var i=0,x;
+    function smiley(){
+        x=setInterval(start,1000);
+    }
+    function start(){
+        document.getElementById("slideshow").src= image[i];
+        i++;
+        if(i==3){
+            i=0;
+        }
+    }
+    function stop(){
+        clearInterval(x);
+    }
+</script>

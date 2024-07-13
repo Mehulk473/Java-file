@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(172, 172, 231);">
+    <h2>Company Select</h2>
+    <table>
+        <tr>
+            <td style="border: 1px solid black;"> Name - </td>
+            <td style="border: 1px solid black;"> <input type="text" name="" id="nm" placeholder="Name Please !">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="border: 1px solid black;"> Age - &nbsp;&nbsp;</td>
+            <td style="border: 1px solid black;"> <input type="text" name="" id="age" placeholder="Age Please !">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="border: 1px solid black;"> Gender - </td>
+            <td style="border: 1px solid black;"> <input type="radio" name="gender" id="male" class="">Male
+                <input type="radio" name="gender" id="female">Female
+            </td>
+        </tr>
+
+        <tr>
+            <td style="border: 1px solid black;"> <input type="button" value="Submit" onclick="check()">
+            </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td style="border: 1px solid black;"> <input type="button" value="Reset" onclick="reset()"> </td>
+        </tr>
+    </table>
+
+    <div id="error">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function check() {
+        if (nm.value == "") {
+            error.innerHTML = " **NAME REQUIRED** ";
+        }
+
+        if (age.value=="") {
+            error.innerHTML+= "  **AGE REQUIRED**  ";
+        } else if (age.value > 20 || age.value < 30) {
+            error.innerHTML += "  **Age Dosen't Fit**  ";
+        }
+        if (!male.checked && !female.checked) {
+            error.innerHTML+="**GENDER REQUIRED**";
+        }
+
+    }
+</script>

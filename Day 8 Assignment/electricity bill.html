@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill </title>
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Electricity Bill</h2>
+    <label for="">Customer Name -</label>
+    <input type="text" name="" id="">
+    <br><br>
+    <label for="">Last Meter Reading -</label>
+    <input type="text" name="" id="lmr">
+    <br><br>
+    <label for="">Current Meter Reading -</label>
+    <input type="text" name="" id="cmr">
+    <br><br>
+    <label for="">Total Units -</label>
+    <input type="text" name="" id="tu">
+    <br><br>
+    <label for="">Bill Amount -</label>
+    <input type="text" name="" id="ba">
+    <br><br>
+    <input type="button" value="Submit" id="sum" onclick="show()">
+    <input type="button" value="Reset" id="res">
+</body>
+</html>
+<script>
+    function show(){
+    var r1,r2,tr,a;
+    r1=document.getElementById("lmr").value;
+    r2=document.getElementById("cmr").value;
+    tr= parseInt(r2) - parseInt(r1);
+    document.getElementById("tu").value=tr;
+    if(tr<=200){
+        a=0;
+    }
+    else if(tr<=500){
+        a=(tr-200)*1.20;
+    }
+    else if(tr<=1000){
+        a=360+(tr-500)*2.50;
+    }
+    else {
+        a=360+1250+(tr-1000)*3;
+    }
+    document.getElementById("ba").value=a;
+    }
+
+</script>
