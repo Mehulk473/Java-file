@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .select {
+            display: flex;
+            text-align: center;
+        }
+
+        .select2 {
+            margin-left: 100px;
+        }
+
+        .total {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Shopping Cart</h2>
+        <div class="select">
+            <div class="select1">
+                <h3>Available</h3>
+                <select name="" id="avail" multiple>
+                    <option value="">Pen</option>
+                    <option value="">Ink</option>
+                    <option value="">Powder</option>
+                </select>
+                <input type="button" value=">" onclick="show()">
+            </div>
+            <div class="select2">
+                <h3>Purchased</h3>
+                <input type="button" value=">" onclick="remove()">
+                <select name="" id="purch" multiple>
+                  
+                </select>
+            </div>
+        </div>
+        <br><br>
+        <div class="total">
+            Count - <input type="text" name="" id="count" style="width: 20px;">
+            <br><br>
+            Bill Total - <input type="text" name="" id="bill" style="width: 20px;">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var list_avail = document.getElementById("avail");
+    var list_purch = document.getElementById("purch");
+    var b = 0;
+    function show() {
+       
+        var new_item = document.createElement("option");
+        new_item.text = list_avail.options[list_avail.selectedIndex].text;
+        list_purch.add(new_item);
+        count.value = list_purch.length;
+        if (new_item.text=="Pen") {
+            b=b+10;
+        } else if (new_item.text=="Ink") {
+            b=b+20;
+        } else {
+            b=b+30;
+        }
+        bill.value = b;
+    }
+
+function remove(){
+    var new_item2 = document.createElement("option");   
+    new_item2.text = list_purch.options[list_purch.selectedIndex].text;
+    list_purch.remove(list_purch.selectedIndex);
+        count.value = list_purch.length;
+        if (new_item2.text=="Pen") {
+            b=b-10;
+        } else if (new_item2.text=="Ink") {
+            b=b-20;
+        } else {
+            b=b-30;
+        }
+        bill.value = b;
+    }
+
+</script>

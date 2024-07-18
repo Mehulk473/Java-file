@@ -12,7 +12,12 @@
     <table>
         <tr>
             <td style="border: 1px solid black;"> Name - </td>
-            <td style="border: 1px solid black;"> <input type="text"  id="nm" placeholder="Name Please !">
+            <td style="border: 1px solid black;"> <input type="text" id="nm" placeholder="Name Please !">
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;" colspan="2">
+                <div id="error1"></div>
             </td>
         </tr>
 
@@ -21,16 +26,32 @@
             <td style="border: 1px solid black;"> <input type="text" name="" id="email" placeholder="Email Please !">
             </td>
         </tr>
+        <tr>
+            <td style="border: 1px solid black;" colspan="2">
+                <div id="error2"></div>
+            </td>
+        </tr>
 
         <tr>
             <td style="border: 1px solid black;"> Password - </td>
             <td style="border: 1px solid black;"> <input type="text" name="" id="pass" placeholder="Passwrod Please !">
             </td>
         </tr>
+        <tr>
+            <td style="border: 1px solid black;" colspan="2">
+                <div id="error3"></div>
+            </td>
+        </tr>
 
         <tr>
             <td style="border: 1px solid black;"> Hobbies - </td>
-            <td style="border: 1px solid black;"> <input type="radio" name="radio" id="">Read <input type="radio" name="radio" id="">Walk <input type="radio" name="radio" id="">Surfing
+            <td style="border: 1px solid black;"> <input type="radio" name="" id="re">Read <input type="radio" name=""
+                    id="wa">Walk <input type="radio" name="" id="su">Surfing
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;" colspan="2">
+                <div id="error4"></div>
             </td>
         </tr>
 
@@ -49,22 +70,28 @@
 </html>
 <script>
     function check() {
-        error.innerHTML="";
+        error1.innerHTML = "";
         console.log(nm.value)
-        if (nm.value === "") {
-            error.innerHTML = " **NAME REQUIRED** ";
+        if (nm.value == "") {
+            error1.innerHTML = " **NAME REQUIRED** ";
+        } else if (nm.value.length < 3) {
+            error1.innerHTML += "**MINIMUM 3 LETTERS REQUIRED**";
         }
-        else if(nm.length < 3){
-            error.innerHTML += "**MINIMUM 3 LETTERS REQUIRED**";
+        error2.innerHTML = "";
+        console.log(nm.value)
+        if (email.value == "") {
+            error2.innerHTML += "**EMAIL REQUIRED**";
         }
-        
-
-        // if (email.value == "") {
-        //     error.innerHTML += "**EMAIL REQUIRED**";
-        // } 
-        // if (password.value=="") {
-        //     error.innerHTML += "**PASSWORD REQUIRED**";
-        // }
+        error3.innerHTML = "";
+        console.log(nm.value)
+        if (pass.value == "") {
+            error3.innerHTML += "**PASSWORD REQUIRED**";
+        }
+        error4.innerHTML = "";
+        console.log(nm.value)
+        if (!re.checked || !wa.checked || !su.checked > 2) {
+            error4.innerHTML += "**ATLEAST 2 HOBBIES REQUIRED**";
+        }
 
     }
 </script>

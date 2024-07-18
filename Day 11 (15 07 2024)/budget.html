@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .budget{
+            height: 40px;
+            width: 300px;
+            border: 2px solid black;
+            font-size: 25px;
+            text-align: center;
+            position: relative;
+            left: 25px;
+            margin-top: 10px;
+
+        }
+        #odd{
+            align-items: center;
+            height: 25px;
+            width: 350px;
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 1.2rem;
+        }
+        .odd input{
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="budget">
+            <label for="">Budget - </label>
+            <input type="text" name="" id="">
+        </div>
+        <br><br>
+        <div id="odd">
+            <label for="">Enter Expense</label>
+            <input type="text" name="" id="" >
+            <input type="button" value="+" onclick="add()">
+            <input type="button" value="-">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function add() {
+       
+        var new_row = document.createElement("<div>");
+        new_row.innerHtml = `
+        <div id="odd">
+            <label for="">Enter Expense</label>
+            <input type="text" name="" id="" >
+            <input type="button" value="+" >
+            <input type="button" value="-">
+        </div>
+        `;
+        document.querySelector('#container #odd').appendChild(new_row);
+            
+       
+    }
+</script>

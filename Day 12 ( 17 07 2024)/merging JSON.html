@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let product1 ={
+        id : "1",
+        Name : "AC",
+        Price : "20000",
+        Warranty : "1 Year"
+    }
+    let product2 ={
+        id : "1",
+        Name : "Refrigerator",
+        Price : "30000",
+        Warranty : "2 Year"
+    }
+    let product_all = [product1,product2]
+    product_all.forEach(rec => {
+        document.write(rec.Name + " ");
+    })
+</script>

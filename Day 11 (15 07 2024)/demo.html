@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <table id="expenseTable">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" placeholder="Description"></td>
+                <td><input type="number" placeholder="Amount"></td>
+                <td><input type="date"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="addExpenseBtn">+</button>
+
+    <script>
+        document.getElementById('addExpenseBtn').onclick = function() {
+            // Create a new row with cells containing input elements
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><input type="text" placeholder="Description"></td>
+                <td><input type="number" placeholder="Amount"></td>
+                <td><input type="date"></td>
+            `;
+            // Append the new row to the table body
+            document.querySelector('#expenseTable tbody').appendChild(newRow);
+        };
+    </script>
+</body>
+</html>
