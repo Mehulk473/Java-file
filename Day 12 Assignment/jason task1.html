@@ -16,24 +16,19 @@
     let student1 = {
         Name: "Aryan",
         id: "7",
-        Physics_Marks: "80",
-        Chemistry_Marks: "80",
-        Maths_Marks: "80",
+        Physics_Marks: 70,
+        Chemistry_Marks: 70,
+        Maths_Marks: 70,
     }
     let student2 = {
         Name: "Sujal",
         id: "7",
-        Physics_Marks: "80",
-        Chemistry_Marks: "80",
-        Maths_Marks: "80",
+        Physics_Marks: 50,
+        Chemistry_Marks: 50,
+        Maths_Marks: 50,
     }
     let x = " "
-    for (let y in student1) {
-        x += y + " ";
-    }
-    x += "<br>"
-    for (y in student1) {
-        x += student1[y] + " ";
-    }
+    let total_marks = student1.Physics_Marks + student1.Chemistry_Marks + student1.Maths_Marks;
+    x += "Student 1 PCM Marks -" + total_marks; 
     document.getElementById("record").innerHTML = x;
 </script>

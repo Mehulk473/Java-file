@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+</head>
+<body>
+    <div id="record"></div>
+
+    <script>
+        async function show(){
+            var uri = "https://dummyjson.com/recipes";
+            var response = await fetch(uri);
+            var data = await response.json();
+
+            var result = document.getElementById("record");
+            var output = "<h1>Recipes</h1>";
+
+            data.recipes.forEach(recipe => {
+                output += "<p>" + recipe.title + "</p>";
+            });
+
+            result.innerHTML = output;
+        }
+        window.onload = show;
+    </script>
+</body>
+</html>

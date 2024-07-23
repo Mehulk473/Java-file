@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="ta" style="border: 2px solid black;">
+        <tr style="border: 2px solid black;" >
+            <td style="border: 2px solid black;">Id </td>
+            <td style="border: 2px solid black;">Title</td>
+            <td style="border: 2px solid black;">Description</td>
+        </tr>
+        <tr style="border: 2px solid black;" >
+            <td id="in" style="border: 2px solid black;">13 </td>
+            <td id="ti" style="border: 2px solid black;">13</td>
+            <td id="pi" style="border: 2px solid black;"></td>
+        </tr>
+    </table>
+</body>
+</html>
+     <script>
+        async function show() {
+
+            const uri = 'https://dummyjson.com/products';
+
+            const response = await fetch(uri);
+            const data = await response.json();
+            var ind = document.getElementById("in")
+            var tit = document.getElementById("ti")
+            var pri = document.getElementById("pi")
+            
+
+            data.products.forEach((ts, index) => {
+                document.write(`Record ${ind + 1}`) = ind ;
+                document.write(`Title: ${tit.title}`) = tit;
+                document.write(`Price: ${pri.price}`) = pri;
+            })
+        }
+        window.onload = show;
+    </script>

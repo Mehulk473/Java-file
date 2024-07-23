@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="record"></div>
+</body>
+</html>
+<script>
+    // Step - 1
+// async function show(){
+//     var uri = "https://dummyjson.com/recipes"
+//     var response = await fetch(uri)
+//     console.log(response);
+// // }
+
+// step - 2
+// // window.onload= show();
+
+// async function show(){
+//     var uri = "https://dummyjson.com/recipes"
+//     var response = await fetch(uri)
+//     var data = response.json()
+//     console.log(data);
+
+// }
+// window.onload= show;
+
+// Step -3
+async function show(){
+    var uri ="https://dummyjson.com/recipes"
+    var response = await fetch(uri)
+    var data = await response.json()
+
+    // console.log(data);
+    
+    var result = document.getElementById("record");
+
+    result.innerHTML = "<h1>" + data.array(30) + "</h1>"
+}
+window.onload= show;
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in Json </title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let student1 = {
+        id : 101,
+        name : "John",
+        marks :[70,60,80],
+
+        show : function(){
+            var sum = 0;
+            sum = this.marks[0] + this.marks[1] + this.marks[2];
+            return sum;
+        }
+    }
+    console.log(`${student1.id}`);
+    console.log(`${student1.name}`);
+    console.log(`${student1.marks.join(`+`)}`);
+    console.log(`${student1.show()}`);
+</script>

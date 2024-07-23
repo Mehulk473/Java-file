@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="record"></div> 
+</body>
+</html>
+<script>
+  async  function show(){
+        const uri = "https://dummyjson.com/carts"
+        const response = await fetch(uri)
+        const data = await response.json()
+        const five= data.carts.slice(0,5);
+
+        five.forEach((record) => {
+            // document.write(`Record : ${index - 1}`);
+            document.write(`Title : ${record.total}`);
+            document.write(`Price : ${record.discountedTotal}`);
+            document.write(`<br>`)
+        })
+    }
+    window.onload= show;
+</script>
