@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 300px;
+            width: 600px;
+            border: 2px solid black;
+        }
+
+        .input_text {
+            height: 30px;
+            width: 220px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text_box  {
+            text-decoration: double line-through;
+            font-size: 20px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            text-align: center;
+            height: 30px;
+        }
+
+
+        .sub {
+            position: relative;
+            top: 15px;
+        }
+
+        /* #match{
+        border: 2px solid black;
+        height: 50px;
+        width: 250px;
+        position: relative;
+        right: 420px;
+        top: 50px;
+       } */
+
+        .sub input {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input_text">
+            <input type="text" name="" id="user" placeholder="Enter Captcha">
+        </div>
+        <div class="faicon" id="one" onclick="refersh()">
+            <i style="font-size:34px" class="fa">&#xf021;</i>
+        </div>
+
+
+        <textarea name="" id="cap" class="text_box" readonly></textarea>
+        <div class="sub">
+            <input type="button" value="Submit" onclick="matched()">
+        </div>
+        <div id="match"></div>
+    </div>
+</body>
+
+
+</html>
+<script>
+    
+    function new_captcha() {
+        const list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var code = "";
+        for (var x = 1; x <= 4; x++) {
+            code += list.charAt(
+            
+                Math.random() * list.length);
+            
+        }
+        document.getElementById("cap").value = code;
+    }
+
+
+    function refersh() {
+        new_captcha();
+    }
+
+    function matched() {
+        var enter = document.getElementById("user").value;
+        var mat = document.getElementById("cap").value;
+        if (enter==mat) {
+           alert("Matched");
+        } else {
+            alert('UnMatched');
+            new_captcha();
+        }
+    }
+    window.onload = new_captcha;
+</script>

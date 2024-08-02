@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"
+    />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+    <table id="example" class="display" style="width: 100%">
+      <tr>
+        <thead>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    </table>
+  </body>
+</html>
+<script>
+    var list=[{
+        "name": "John",
+        "age": 30,
+        "email": "john@example.com"
+    },
+    {
+        "name": "Anna",
+        "age": 24,
+        "email": "anna@example.com"
+
+    }
+    ,{
+        "name": "Peter",
+        "age": 35,
+        "email": "peter@example.com"
+
+    },
+    {
+        "name": "Linda",
+        "age": 28,
+        "email": "linda@example.com" 
+    },
+    {
+        "name": "Jack",
+        "age": 32,
+        "email": "jack@example.com"
+
+    },
+    {
+        "name": "Lily",
+        "age": 25,
+        "email": "lily@example.com"
+    },
+    {
+        "name": "Tom",
+        "age": 31,
+        "email": "tom@example.com"
+    },
+    {
+        "name": "Rose",
+        "age": 29,
+        "email": "rose@example.com"
+    },
+    {
+        "name": "Bob",
+        "age": 33,
+        "email": "bob@example.com"
+
+    },
+    {
+        "name": "Alice",
+        "age": 26,
+        "email": "alice@example.com"
+    },
+    {
+        "name": "Mike",
+        "age": 30,
+        "email": "mike@example.com"
+    },{
+        "name": "Emma",
+        "age": 27,
+        "email": "emma@example.com"
+    },
+    {
+        "name": "Oliver",
+        "age": 34,
+        "email": "oliver@example.com"
+    }
+    ];
+    $('#example').DataTable({
+        data:list,
+        columns:[
+         {  data:"name"},
+           { data:"age"}, 
+          {  data:"email"}
+        ]
+    })
+</script>

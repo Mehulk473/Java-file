@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLE TASK
+        JSON
+    </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+   <!-- <div id="record"></div>  -->
+    <table style="border: 1px solid black;">
+        <tr style="border: 1px solid black; ;">
+            <td style="border: 1px solid black; background-color: rgb(49, 247, 181)">ID</td>
+            <!-- <td style="border: 1px solid black;">NAME</td> -->
+            <td style="border: 1px solid black; background-color: rgb(230, 203, 54)">Price</td>
+            <td style="border: 1px solid black;">Desciption</td>
+        </tr>
+
+        <tr style="border: 1px solid black; " >
+            <td  style="border: 1px solid black; background-color: burlywood;">
+                <div id="idcol"></div>
+            </td>
+            <!-- <td rowspan="10" style="border: 1px solid black;">
+                <div id="nmcol"></div>
+            </td> -->
+            <td  style="border: 1px solid black;background-color: coral;">
+                <div id="prcol"></div>
+            </td>
+            <td   style="border: 1px solid black; background-color: cadetblue;">
+                <div id="desccol"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+
+    async function show(){
+        const uri = "https://dummyjson.com/products?limit=10&select=id,name,price,description"
+        const response = await fetch(uri);
+        const data = await response.json();
+        const idh=document.getElementById("idcol");
+        // const nmh=document.getElementById("nmcol");
+        const prh=document.getElementById("prcol");
+        const deh=document.getElementById("desccol");
+
+        data.products.forEach(result => {
+        idh.innerHTML+=`<p>${result.id}</p>`;
+        })
+        // data.products.forEach(result =>{
+        //     nmh.innerHTML+=`<p>${result.name}</p>`;
+        // })
+        data.products.forEach(result =>{
+            prh.innerHTML+=`<p>${result.price}</p>`;
+        })
+        data.products.forEach(result =>{
+            deh.innerHTML+=`<p>${result.description}</p>`;
+        })
+        console.log(data);
+    }
+    window.onload= show;
+</script>

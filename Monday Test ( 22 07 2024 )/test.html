@@ -6,6 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="record"></div>
 </body>
 </html>
+<script>
+    // Task 1
+//    var a;
+//     for(a=1;a<=10;a=a*a){
+//         document.write(a);
+//     }
+// Task 3
+// var a,b
+// for(a=3;a>=1;a--){
+//     for(b=3;b>=1;b--)
+//     console.log(a);
+// }
+// task2
+// var age,per;
+// age=7;
+// per = 89;
+// if(age < 8 && per >90){
+//     document.write("YOUR SECTION IS A");
+// }
+// else if (age < 8 && per <90){
+//     document.write("YOUR SECTION IS B");
+// }
+// else{
+//     document.write("YOUR SECTION IS C");
+// }
+// task 4
+
+async function show(){
+    const uri = "https://dummyjson.com/products"
+    const response = await fetch(uri);
+    const data = await response.json();
+    const rec = document.getElementById("record");
+
+    data.products.forEach((data) => {
+        rec.innerHTML += `<h1>${data.title}<h1> <h2>${data.price}</h2>`;
+    })
+    console.log(data);
+}
+window.onload = show;
+</script>

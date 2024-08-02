@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Personal Information Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+
+            /* font-family: "Poppins", sans-serif; */
+
+        }
+
+        .form-container {
+            background-color: #d8b38e;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+
+
+
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+
+        }
+
+        label {
+            display: block;
+            margin-left: 2px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 94%;
+            padding: 10px;
+            /* margin: 10px 0;  */
+             border: 1px solid #ccc;
+            border-radius: 5px; 
+        }
+
+        input{
+            outline: none;
+            
+        }
+
+      
+
+        .form-container select {
+            width: 99%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+
+        }
+
+        .form-container input[type="radio"],
+        .form-container input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            margin-left: 10px;
+
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .form-container2 {
+        /* margin-top: -700px; */
+        position: absolute;
+        top: 90px;
+        display: none;
+        background-color: #90d2ed;
+        padding: 20px;
+        width: 50vh;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container2 input,
+        .form-container2 textarea {
+            width: 94%;
+            padding: 10px;
+            margin: 10px 0; 
+             border: 1px solid #ccc;
+            border-radius: 5px; 
+        }
+        .fbtn{
+            width: 100px;
+            height: 30px;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Personal Information</h2>
+        <form>
+            <div class="form-group">
+                <label for="fullName">Full Name: <i class="fa fa-plus" onclick="show()" style="cursor: pointer;"></i></label>
+                <input type="text" id="Name" name="fullName" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" />
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <span>Gender:</span>
+                <input type="radio" id="male" name="gender" value="male" />Male
+                <input type="radio" id="female" name="gender" value="female" />Female
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="" disabled selected>Select Country</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <span>Interests:</span>
+                <input type="checkbox" id="sports" name="interests" value="sports" />Sport
+                <input type="checkbox" id="music" name="interests" value="music" />Music
+
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <div class="form-container2" id="form-container2">
+      <i class="fa fa-close" onclick="hide()"></i>
+      <h2>Additional Information</h2>
+      <div class="form-group">
+        <label for="fname">Father's Name:</label>
+        <input type="text" id="fname" />
+      </div>
+      <div class="form-group">
+        <label for="mname">Mother's Name:</label>
+        <input type="text" id="mname" />
+      </div>
+      <div class="form-group">
+        <label for="address2">Address:</label>
+        <textarea id="address2" name="address2" rows="3"></textarea>
+      </div>
+      <button type="submit" class="fbtn">Submit</button>
+      <button type="reset" class="fbtn">Reset</button>
+    </div>
+
+</body>
+    <script>
+        function show() {
+            document.getElementById("form-container2").style.display = "block";
+        }
+        function hide() {
+            document.getElementById("form-container2").style.display = "none";
+        }
+    </script>
+
+</html>

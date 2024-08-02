@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <button onclick="show()">Generate PDF </button>
+    <script>
+        function show(){
+            const {jsPDF}= window.jspdf;
+            var doc = new jsPDF();
+            doc.setFontSize(20);
+            doc.text("PUNJAB UNIVERSITY",40,20);
+            doc.setFontSize(18);
+            doc.text("Name: Deepshikha" ,20,60);
+            doc.text("Roll number: 2341853",20,70);
+            doc.text("Semester: 4",20,80);
+            doc.text("Center of exam:GGSD sector 32 Chandigarh:",20,90);
+            doc.line(20,100,180,100)
+            doc.autoTable({
+                 startY:110,
+                    head: [['Subject', 'Exam Date', 'Name']],
+                    body: [
+                        ['Java ', '08-02-2024', 'Nikesh'],
+                        ['E Commerce', '09-02-2024'],
+                        ['TOC', '12-02-2024'],
+                        ['C++', '18-02-2024']
+                    ]
+                });
+                
+        
+                var img = new Image();
+            img.src = "pu-logo.png";
+            img.onload = function() {
+                doc.addImage(img, "PNG", 150, 5, 30, 30);
+
+            var img2 = new Image();
+            img2.src ="deepshikha.jpg";
+            img2.onload =function(){
+                doc.addImage(img2, "JPG",150,45,40,35)
+            
+            doc.setFontSize(15)
+            doc.text("***THE END***",90,160)
+                doc.save("mypdf.pdf");
+            }
+            };
+    }
+    </script>
+</body>
+</html>

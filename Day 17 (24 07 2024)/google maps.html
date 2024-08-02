@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 1st Map</title>
+    <style>
+        #map{
+            height: 600px;
+            width: 100%;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDncZ8jH6lIvz2FmOgFFR7eJQgbIrX9uPI&callback=initMap">
+    </script>
+</html>
+<script>
+    function initMap() {
+        var loc = {lat: 30.704649, lng:76.717873};
+        var mapOptions = {
+            center: loc,
+            zoom: 20
+        };
+        var googlemap = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+  </script>

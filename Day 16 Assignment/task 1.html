@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in Json </title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let bill1 = {
+        id: 101,
+        name: "Golu",
+        Price: [20, 30, 40],
+        qty: [2, 4, 6],
+
+        bill: function () {
+            var bill_amount = 0;
+
+
+            bill_amount = this.Price[0] * this.qty[0] + this.Price[1] * this.qty[1] + this.Price[2] * this.qty[
+                2]
+            return bill_amount
+        },
+
+        first: function () {
+            var bill_1 = 0;
+
+            bill_1 = this.Price[0] * this.qty[0];
+
+            return bill_1;
+        },
+
+        second: function () {
+            var bill_2 = 0;
+
+            bill_2 = this.Price[1] * this.qty[1];
+            return bill_2;
+        },
+        third: function () {
+            var bill_3 = 0;
+
+            bill_3 = this.Price[2] * this.qty[2];
+            return bill_3;
+        }
+
+
+
+    }
+    // console.log(`${bill1.id}`);
+    // console.log(`${bill1.name}`);
+    // console.log(`${bill1.Price.join(`+`)}`);
+    // console.log(`${bill1.qty.join(`+`)}`);
+    console.log(`${bill1.first()}`)
+    console.log(`${bill1.second()}`)
+    console.log(`${bill1.third()}`)
+    console.log(`Bill Amount :${bill1.bill()}`);
+</script>

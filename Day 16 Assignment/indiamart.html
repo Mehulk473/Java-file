@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .box {
+            height: 350px;
+            width: 200px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1">A</div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+    </div>
+    <script>
+        let product1 = {
+            image: "https://5.imimg.com/data5/SELLER/Default/2021/5/SR/CY/PR/730787/evion-vitamin-e-soft-capsule-500x500-250x250.jpg",
+            title: "Vitamin B Capsules",
+            vendor_name: "Mercury Medicare, Chennai",
+            address: ["Chennai", "TamilNadu"],
+            amount: "₹30",
+
+            print1: function () {
+                const print = document.getElementById("box1");
+                print.innerHTML =
+                    `<img src="${this.image}" alt="${this.title}" width="100%"  height="150px"><h3>${this.title}</h3> <p>${this.vendor_name}</p> <p>${this.address.join(', ')}</p> <h3>${this.amount}</h3>`;
+            }
+        };
+        product1.print1();
+
+        let product2 = {
+            image: "https://5.imimg.com/data5/SELLER/Default/2024/2/388900944/WM/ZH/WN/9503041/b-braun-dialog-plus-dialysis-machine-250x250.jpg",
+            title: "B Braun Dialog Plus Dialysis Machine, For Haemodi...",
+            vendor_name: "Rajsun Innovations LLP",
+            address: ["Ahmedabad, Gujarat"],
+            amount: "₹ 6.50 Lac",
+
+            print2: function () {
+                const print = document.getElementById("box2");
+                print.innerHTML =
+                    `<img src="${this.image}" alt="${this.title}" width="100%" height="150px"><h3>${this.title}</h3> <p>${this.vendor_name}</p> <p>${this.address.join(', ')}</p> <h3>${this.amount}</h3>`;
+            }
+        };
+        product2.print2();
+
+        let product3 = {
+            image: "https://5.imimg.com/data5/ST/QW/MY-38700875/fresh-wheat-crop-250x250.jpg",
+            title: "Indian Fresh Wheat Crop",
+            Vendor_name: "Neshkala Crop Producer Company Private Limited",
+            Address: ["Guna, MadhyaPradesh"],
+            amount: "₹ 20000",
+
+            print3: function () {
+                const print = document.getElementById("box3");
+                print.innerHTML =
+                    `<img src="${this.image}" alt ="${this.title}" width="100%"><h3>${this.title}</h3> <p>${this.Vendor_name}</p> <p> ${this.Address.join(`, `)}</p> <h3> ${this.amount}</h3>`;
+            }
+        };
+        product3.print3();
+
+        let product4 = {
+            image: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZV/MW/VR/35149336/mobile-skin-cutting-plotter-machine-250x250.jpg",
+            title: "Mobile Skin Cutting Plotter Machine",
+            Vendor_name: "Electro Micro Technology Pvt Ltd",
+            Address: ["Vadodara, Gujarat"],
+            amount: "₹ 27000",
+
+            print4: function () {
+                const print = document.getElementById("box4");
+                print.innerHTML =
+                    `<img src="${this.image}" alt ="${this.title}" width="100%" height="150px"><h3>${this.title}</h3> <p>${this.Vendor_name}</p> <p> ${this.Address.join(`, `)}</p> <h3> ${this.amount}</h3>`;
+            }
+        };
+        product4.print4();
+
+        let product5 = {
+            image: "https://5.imimg.com/data5/SELLER/Default/2022/12/BG/OO/VW/3461269/fluted-panels-250x250.jpeg",
+            title: "Mobile Skin Cutting Plotter Machine",
+            Vendor_name: "Tara Start International",
+            Address: ["Kolkata, West Bengal"],
+            amount: "₹ 47  / SQ FT",
+
+            print5: function () {
+                const print = document.getElementById("box5");
+                print.innerHTML =
+                    `<img src="${this.image}" alt ="${this.title}" width="100%" height="150px" ><h3>${this.title}</h3> <p>${this.Vendor_name}</p> <p> ${this.Address.join(`, `)}</p> <h3> ${this.amount}</h3>`;
+            }
+        };
+        product5.print5();
+    </script>
+</body>
+
+</html>

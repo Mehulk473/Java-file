@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        tr:nth-child(odd){
+            background-color: rgb(136, 235, 123);
+        }
+    </style>
 </head>
+
 <body>
-    <table id="ta" style="border: 2px solid black;">
-        <tr style="border: 2px solid black;" >
-            <td style="border: 2px solid black;">Id </td>
-            <td style="border: 2px solid black;">Title</td>
-            <td style="border: 2px solid black;">Description</td>
-        </tr>
-        <tr style="border: 2px solid black;" >
-            <td id="in" style="border: 2px solid black;">13 </td>
-            <td id="ti" style="border: 2px solid black;">13</td>
-            <td id="pi" style="border: 2px solid black;"></td>
-        </tr>
+    <table id="" style="border: 2px solid black;">
+        <thead>
+            <tr  style="border: 1px solid black; background-color: rgb(238, 172, 224);">
+                <td style="border: 1px solid black;">Id </td>
+                <td style="border: 1px solid black;">Title</td>
+                <td style="border: 1px solid black;">Price</td>
+                <td style="border: 1px solid black;">Description</td>
+            </tr>
+        </thead>
+        <tbody id="table2" >
+           
+        </tbody>
     </table>
 </body>
+
 </html>
-     <script>
-        async function show() {
+<script>
+    async function show() {
 
-            const uri = 'https://dummyjson.com/products';
+        const uri = 'https://dummyjson.com/products?limit=5&skip=&select=title,price,description';
 
-            const response = await fetch(uri);
-            const data = await response.json();
-            var ind = document.getElementById("in")
-            var tit = document.getElementById("ti")
-            var pri = document.getElementById("pi")
-            
+        const response = await fetch(uri);
+        const data = await response.json();
+        const transfer = document.getElementById("table2");
 
-            data.products.forEach((ts, index) => {
-                document.write(`Record ${ind + 1}`) = ind ;
-                document.write(`Title: ${tit.title}`) = tit;
-                document.write(`Price: ${pri.price}`) = pri;
-            })
-        }
-        window.onload = show;
-    </script>
+        data.products.forEach (data =>{
+            transfer.innerHTML += `<tr><td>${data.id}</td><td>${data.title}</td><td>${data.price}</td><td>${data.description}</td></tr>`
+        })
+    
+    }
+
+    window.onload = show;
+</script>

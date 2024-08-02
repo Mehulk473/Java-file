@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    //Sum of 2 values
+    // function sum(a,b){
+    //     console.log(a+b);
+    // }
+    // function calculator(a,b, add){
+    //     add (a,b);
+    // }
+    // calculator(1,2, sum);
+
+    //High in 3 values
+    function max(cb){
+        cb()
+    }
+    function values(){
+        if(max1 >max2 && max2 > max3){
+            document.getElementById("result")= max1;
+        }
+        else if(max2 > max3 && max2 > max1){
+            document.getElementById("result")= max2;
+        }
+        else{
+            document.getElementById("result")= max3;
+        }
+    }
+    
+</script>
